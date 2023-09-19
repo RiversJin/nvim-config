@@ -21,8 +21,8 @@ local plugins = {
             transparent_background = true,
             term_colors = false
         },
-        config = function ()
-            
+        config = function (_, opts)
+            require("catppuccin").setup(opts)
             vim.cmd([[colorscheme catppuccin-frappe]])
         end
     },

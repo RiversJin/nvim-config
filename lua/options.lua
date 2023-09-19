@@ -20,9 +20,15 @@ local set_search = function()
     vim.opt.smartcase = true -- but make it case sensitive if an uppercase is entered
 end
 
+function term_open_setup()
+    vim.wo.number = false
+    vim.wo.relativenumber = false
+end
 
 set_tab()
 set_ui()
 set_search()
 
+vim.opt.mouse = ''
 
+vim.api.nvim_exec([[autocmd TermOpen * lua term_open_setup()]], false)
